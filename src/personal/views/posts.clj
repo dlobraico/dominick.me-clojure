@@ -4,8 +4,8 @@
   (:use [noir.core :only [defpage defpartial]]
         [hiccup.core :only [html]]
         [hiccup.page-helpers :only [link-to]]
-        [clj-time.core]
-        [clj-time.format]
+        [clj-time.core :exclude(extend)]
+        [clj-time.format] 
         [clojure.core.match :only (match)]))
 
 (defn relative-date [sql-date] 
