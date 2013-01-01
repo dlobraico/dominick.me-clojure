@@ -1,0 +1,12 @@
+pom.xml
+*jar
+bin
+classes
+lib
+releases
+native
+target
+.DS_Store
+.lein-deps-sum
+main.css
+*.db
