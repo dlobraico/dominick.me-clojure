@@ -1,4 +1,4 @@
-(ns personal.views.main
+(ns personal.views.styles.main
   (:require [clj-style.core :as cs]))
 
 (cs/defrule header

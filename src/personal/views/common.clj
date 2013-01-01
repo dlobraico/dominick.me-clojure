@@ -1,5 +1,5 @@
 (ns personal.views.common
-  (:require [personal.views.main :as main])
+  (:require [personal.views.styles.main :as main])
   (:use [noir.core :only [defpartial]]
         [hiccup.page-helpers :only [include-css html5 link-to]]))
 

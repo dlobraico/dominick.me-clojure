@@ -1,6 +1,6 @@
 (ns personal.views.posts
   (:require [personal.views.common :as common])
-  (:require [personal.views.db :as db])
+  (:require [personal.utils.db :as db])
   (:use [noir.core :only [defpage defpartial]]
         [hiccup.core :only [html]]
         [hiccup.page-helpers :only [link-to]]
