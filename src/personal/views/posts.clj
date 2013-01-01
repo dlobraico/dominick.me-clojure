@@ -1,6 +1,6 @@
 (ns personal.views.posts
   (:require [personal.views.common :as common])
-  (:require [personal.utils.db :as db])
+  (:require [personal.models.posts :as posts])
   (:use [noir.core :only [defpage defpartial]]
         [hiccup.core :only [html]]
         [hiccup.page-helpers :only [link-to]]
@@ -37,7 +37,7 @@
 (defpartial pagination [cur-page]
   (let [prev (link-to (str "/page/" (- cur-page 1)) "<< Previous")
         next (link-to (str "/page/" (+ cur-page 1)) "Next >>")
-        total (db/total-posts)]
+        total (posts/total-posts)]
     [:ul#pagination
      [:li#prev (if (> cur-page 1) prev)]
      ;; [:li#cur  cur-page]
@@ -46,7 +46,7 @@
 
 (defpartial posts-list [page]
   [:ul#posts
-   (map post-item (db/select-published page))]
+   (map post-item (posts/select-published page))]
   (pagination page))
 
 

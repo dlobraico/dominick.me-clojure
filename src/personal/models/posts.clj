@@ -1,4 +1,4 @@
-(ns personal.utils.db
+(ns personal.models.posts 
   "database queries"
   (:use [korma.db]
         [korma.core]))
