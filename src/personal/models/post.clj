@@ -1,24 +1,7 @@
-(ns personal.models.posts 
-  "database queries"
-  (:use [korma.db]
+(ns personal.models.post
+  (:use [personal.db]
+        [korma.db]
         [korma.core]))
-
-;;(defdb mydb (sqlite3 {:db "personal"
-;;                      :naming {:keys string/lower-case
-;;                               :fields string/upper-case }}))
-(defdb mydb {:classname "org.sqlite.JDBC"
-             :subprotocol "sqlite"
-             :subname "db/personal.db"})
-
-(defentity posts
-  (pk :id)
-  (table :posts)
-  (entity-fields :title :url :description :created_at :published)
-  (database mydb)
-
-  ;; (prepare ..)
-  ;; (transform ..)
-  )
 
 (defn generate_offset_limit [page_number num_per_page]
   (let [start (* page_number num_per_page)]
